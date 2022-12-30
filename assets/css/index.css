@@ -1,0 +1,84 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #000;
+  background-color: #e9eCf4;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: "header header header" "content content sidebar" "widget-1 widget-2 sidebar" "footer footer footer";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+}
+
+.container > div,
+.container .header,
+.container .sidebar,
+.container .footer,
+.container .content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.container .header {
+  grid-area: header;
+  background-color: #12203e;
+  color: #fff;
+}
+
+.container .content {
+  grid-area: content;
+}
+
+.container .sidebar {
+  grid-column: 3/4;
+  background-color: #faa43d;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  min-height: 100px;
+  grid-area: sidebar;
+}
+
+.container .widget-1,
+.container .widget-2 {
+  background-color: #55a8fd;
+  color: #fff;
+  height: 100px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.container .widget-1 {
+  grid-area: widget-1;
+}
+
+.container .widget-2 {
+  grid-area: widget-2;
+}
+
+.container .footer {
+  background-color: #12203f;
+  color: #fff;
+  grid-area: footer;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    grid-template-areas: "header header header" "content content content" "sidebar sidebar sidebar" "widget-1 widget-1 widget-2" "footer footer footer";
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
